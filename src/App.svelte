@@ -1,5 +1,6 @@
 <script lang="ts">
   import Greet from './lib/Greet.svelte'
+  import Placeholder from './lib/Placeholder.svelte';
 </script>
 
 <main class="container">
@@ -21,8 +22,9 @@
     Click on the Tauri, Vite, and Svelte logos to learn more.
   </p>
 
-  <div class="row">
+  <div class="column">
     <Greet />
+    <!-- <Placeholder /> -->
   </div>
 
 
