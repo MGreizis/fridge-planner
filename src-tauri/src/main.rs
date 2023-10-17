@@ -19,8 +19,6 @@ fn placeholder(text: String) -> String {
 
 fn main() {
   tauri::Builder::default()
-    // .invoke_handler(tauri::generate_handler![placeholder])
-    // .invoke_handler(tauri::generate_handler![create_window])
     .invoke_handler(tauri::generate_handler![
         greet,
         placeholder,

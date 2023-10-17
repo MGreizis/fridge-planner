@@ -3,7 +3,6 @@
 
   async function openNewWindow() {
     try {
-      // Call the create_window function using the Tauri invoke method
       await invoke("create_window");
     } catch (error) {
       console.error(error);

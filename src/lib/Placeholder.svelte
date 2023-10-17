@@ -4,7 +4,6 @@
   let text = ""
   let finalText = ""
 
-  // invoke("placeholder", { text: "funny message"})
   async function placeholder() {
     finalText = await invoke("placeholder", { text })
   }
