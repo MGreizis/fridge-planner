@@ -14,7 +14,7 @@ fn greet(app: AppHandle, name: &str) -> String {
 
 #[tauri::command]
 fn placeholder(text: String) -> String {
-    format!("This is placeholder text: `{}`, funny, right?", text)
+  format!("This is placeholder text: `{}`, funny, right?", text)
 }
 
 fn main() {
