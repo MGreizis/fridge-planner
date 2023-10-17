@@ -2,5 +2,5 @@
 <p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
 
 <a href="/onboarding">
-  <button>Get Started</button>
+  <button class="border-2 border-black rounded-md hover:bg-green-600">Get Started</button>
 </a>

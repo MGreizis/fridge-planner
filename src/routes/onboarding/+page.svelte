@@ -5,7 +5,7 @@
 <main>
   <h1>Onboarding page</h1>
   <a href="/">
-    <button>Go to home page</button>
+    <button class="border-2 border-black rounded-md hover:bg-green-600">Go to home page</button>
   </a>
 </main>
 
