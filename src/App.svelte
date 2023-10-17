@@ -1,6 +1,7 @@
 <script lang="ts">
   import Greet from './lib/Greet.svelte'
   import Placeholder from './lib/Placeholder.svelte';
+  import Window from './lib/Window.svelte';
 </script>
 
 <main class="container">
@@ -24,7 +25,8 @@
 
   <div class="column">
     <Greet />
-    <!-- <Placeholder /> -->
+    <Placeholder />
+    <Window />
   </div>
 
 
