@@ -11,12 +11,15 @@
     appliances[index].checked = !appliances[index].checked;
   }
 
-  async function savePreferences() {
-    const selectedAppliances = appliances.filter((appliance) => appliance.checked).map((appliance) => appliance.name);
+  async function saveAppliances() {
+    const selectedAppliances = appliances.map((appliance) => ({
+      name: appliance.name,
+      checked: appliance.checked,
+    }));
     console.log("Selected appliances:", selectedAppliances);
 
     try {
-      await invoke("save_preferences", { appliances: JSON.stringify(selectedAppliances) });
+      await invoke("save_appliances", { appliances: JSON.stringify(selectedAppliances) });
     } catch (error) {
       console.error(error);
     }
@@ -47,7 +50,7 @@
 
     <button
       class="mt-6 bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded-md"
-      on:click={savePreferences}
+      on:click={saveAppliances}
     >
       Save
     </button>

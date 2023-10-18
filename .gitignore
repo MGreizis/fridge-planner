@@ -13,6 +13,8 @@ vite.config.ts.timestamp-*
 
 dist
 
+/src-tauri/scdb_dumps
+
 # rust compiled folders
 target
 

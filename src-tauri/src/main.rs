@@ -2,11 +2,13 @@
 #![cfg_attr(not(debug_assertions), windows_subsystem = "windows")]
 
 mod onboarding;
+mod dietpreferences;
 
 fn main() {
   tauri::Builder::default()
     .invoke_handler(tauri::generate_handler![
-      onboarding::save_preferences
+      onboarding::save_appliances,
+      dietpreferences::save_dietary_preferences
     ])
     .run(tauri::generate_context!())
     .expect("error while running tauri application");
