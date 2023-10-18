@@ -14,4 +14,11 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
+  :global(a) {
+    color: #2ECC71;
+    text-decoration: none;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
 </style>
