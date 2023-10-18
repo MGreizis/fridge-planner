@@ -11,6 +11,8 @@ vite.config.ts.timestamp-*
 .vscode/settings.json
 */.vscode/
 
+dist
+
 # rust compiled folders
 target
 
