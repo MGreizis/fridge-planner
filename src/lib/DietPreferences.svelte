@@ -1,12 +1,12 @@
 <script lang="ts">
-  import { invoke } from '@tauri-apps/api/tauri';
+  import { invoke } from "@tauri-apps/api/tauri";
 
   let dietaryPreferences = [
-    { name: 'Vegetarian', selected: false },
-    { name: 'Vegan', selected: false },
-    { name: 'Gluten-Free', selected: false },
-    { name: 'Dairy-Free', selected: false },
-    { name: 'Keto', selected: false },
+    { name: "Vegetarian", selected: false },
+    { name: "Vegan", selected: false },
+    { name: "Gluten-Free", selected: false },
+    { name: "Dairy-Free", selected: false },
+    { name: "Keto", selected: false },
   ];
 
   async function togglePreference(index: number) {
@@ -21,7 +21,9 @@
     console.log("Selected preferences:", selectedPreferences);
 
     try {
-      await invoke("save_dietary_preferences", { preferences: JSON.stringify(selectedPreferences) });
+      await invoke("save_dietary_preferences", {
+        preferences: JSON.stringify(selectedPreferences),
+      });
     } catch (error) {
       console.error(error);
     }
@@ -30,23 +32,40 @@
 
 <main>
   <a href="/">
-    <button class="border-1 border-black rounded-md hover:bg-slate-500" on:click={() => history.back()}>Go back</button>
+    <button
+      class="border-1 border-black rounded-md hover:bg-slate-500"
+      on:click={() => history.back()}>Go back</button
+    >
   </a>
 
   <form>
-    <h2 class="text-2xl mb-4 text-green-600">Select Your Dietary Preferences</h2>
+    <h2 class="text-2xl mb-4 text-green-600">
+      Select Your Dietary Preferences
+    </h2>
     <section class="grid grid-cols-2 gap-4 mx-4">
       {#each dietaryPreferences as preference, index (preference.name)}
-      <div
-        class="bg-white p-4 border-2 border-black rounded-md cursor-pointer hover:bg-blue-100"
-        class:bg-blue-100={preference.selected}
-        on:click={() => togglePreference(index)}
-      >
-        <label for={preference.name} class="text-lg font-semibold">
-          <input type="checkbox" class=hidden id={preference.name} bind:checked={preference.selected} />
-          {preference.name}
-        </label>
-      </div>
+        <div
+          class="bg-white p-4 border-2 border-black rounded-md cursor-pointer hover:bg-blue-100"
+          class:bg-blue-100={preference.selected}
+          on:click={() => togglePreference(index)}
+          on:keyup={(e) => {
+            if (e.key === "Enter") {
+              togglePreference(index);
+            }
+          }}
+          role="button"
+          tabindex="0"
+        >
+          <label for={preference.name} class="text-lg font-semibold">
+            <input
+              type="checkbox"
+              class="hidden"
+              id={preference.name}
+              bind:checked={preference.selected}
+            />
+            {preference.name}
+          </label>
+        </div>
       {/each}
     </section>
 
