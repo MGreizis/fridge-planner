@@ -30,7 +30,7 @@
 
 <main>
   <a href="/">
-    <button class="border-1 border-black rounded-md hover:bg-slate-500">Go to home page</button>
+    <button class="border-1 border-black rounded-md hover:bg-slate-500" on:click={() => history.back()}>Go back</button>
   </a>
 
   <form>
