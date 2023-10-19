@@ -6,7 +6,6 @@
 
 <style lang="postcss">
   :global(html) {
-    /* font-family: "Inter", sans-serif; */
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 16px;
     font-weight: 400;
@@ -17,7 +16,7 @@
     background: rgb(180, 180, 180);
   }
   :global(a) {
-    color: rgb(22 163 74);
+    color: rgb(22 163 74); /* green-600 in tailwind */
     text-decoration: none;
     &:hover {
       text-decoration: underline;
