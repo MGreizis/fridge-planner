@@ -35,7 +35,7 @@
 
   <form>
     <h2 class="text-2xl mb-4 text-green-600">Select Your Dietary Preferences</h2>
-    <div class="grid grid-cols-2 gap-4 mx-4">
+    <section class="grid grid-cols-2 gap-4 mx-4">
       {#each dietaryPreferences as preference, index (preference.name)}
       <div
         class="bg-white p-4 border-2 border-black rounded-md cursor-pointer hover:bg-blue-100"
@@ -48,7 +48,7 @@
         </label>
       </div>
       {/each}
-    </div>
+    </section>
 
     <button
       class="mt-6 bg-blue-500 hover-bg-blue-600 text-white py-2 px-4 rounded-md"
