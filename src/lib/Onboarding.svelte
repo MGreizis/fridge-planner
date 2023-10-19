@@ -28,7 +28,7 @@
 
 <main>
   <a href="/">
-    <button class="border-1 border-black rounded-md hover:bg-green-600">Go to home page</button>
+    <button class="border-1 border-black rounded-md hover:bg-slate-500">Go to home page</button>
   </a>
 
   <form>
@@ -36,7 +36,7 @@
     <div class="grid grid-cols-2 gap-4 mx-4">
       {#each appliances as appliance, index (appliance.name)}
       <div
-        class="bg-white p-4 border border-gray-200 rounded-md cursor-pointer hover:bg-blue-100"
+        class="bg-white p-4 border-2 border-black rounded-md cursor-pointer hover:bg-blue-100"
         class:bg-blue-100={appliance.checked}
         on:click={() => toggleAppliance(index)}
       >

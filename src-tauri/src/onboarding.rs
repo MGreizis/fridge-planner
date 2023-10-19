@@ -21,12 +21,11 @@ pub fn save_appliances(_app: tauri::AppHandle, appliances: String) {
         .map(|appliance| appliance.name.clone())
         .collect();
 
-    // Now you have a vector of Appliance objects that you can work with
     println!("Saving appliances: {:?}", selected_appliances);
 
     // Set up and configure your storage (create a store instance)
     let mut store = Store::new(
-        "scdb_dumps",
+        "scdb_dumps/appliances",
         Some(1000),
         Some(1),
         Some(10),

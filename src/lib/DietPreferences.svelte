@@ -14,10 +14,11 @@
   }
 
   async function savePreferences() {
-    const selectedPreferences = dietaryPreferences
-      .filter((preference) => preference.selected)
-      .map((preference) => preference.name);
-      console.log("Selected preferences:", selectedPreferences);
+    const selectedPreferences = dietaryPreferences.map((preference) => ({
+      name: preference.name,
+      selected: preference.selected,
+    }));
+    console.log("Selected preferences:", selectedPreferences);
 
     try {
       await invoke("save_dietary_preferences", { preferences: JSON.stringify(selectedPreferences) });
@@ -29,15 +30,15 @@
 
 <main>
   <a href="/">
-    <button class="border-1 border-black rounded-md hover-bg-green-600">Go to home page</button>
+    <button class="border-1 border-black rounded-md hover:bg-slate-500">Go to home page</button>
   </a>
 
   <form>
-    <h2 class="text-2xl mb-4 text-red-600">Select Your Dietary Preferences</h2>
+    <h2 class="text-2xl mb-4 text-green-600">Select Your Dietary Preferences</h2>
     <div class="grid grid-cols-2 gap-4 mx-4">
       {#each dietaryPreferences as preference, index (preference.name)}
       <div
-        class="bg-white p-4 border border-gray-200 rounded-md cursor-pointer hover-bg-blue-100"
+        class="bg-white p-4 border-2 border-black rounded-md cursor-pointer hover:bg-blue-100"
         class:bg-blue-100={preference.selected}
         on:click={() => togglePreference(index)}
       >
