@@ -4,6 +4,3 @@
 <a href="/onboarding">
   <button class="border-2 border-black rounded-md hover:bg-slate-500">Get Started</button>
 </a>
-<a href="/preferences">
-  <button class="border-2 border-black rounded-md hover:bg-slate-500">Preferences</button>
-</a>

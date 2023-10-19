@@ -1,5 +1,7 @@
 <script lang="ts">
+  import { goto } from '$app/navigation';
   import { invoke } from '@tauri-apps/api/tauri';
+
   let appliances = [
     { name: "Oven", checked: false },
     { name: "Microwave", checked: false },
@@ -20,6 +22,8 @@
 
     try {
       await invoke("save_appliances", { appliances: JSON.stringify(selectedAppliances) });
+
+      goto("/preferences");
     } catch (error) {
       console.error(error);
     }
